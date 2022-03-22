@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stand oil</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="https://kit.fontawesome.com/7fd8b2275e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="./css/jquery.bxslider.min.css">
+    <link rel="stylesheet" href="./css/slick-theme.css">
+    <link rel="stylesheet" href="./css/slick.css">
+
+    <!-- font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'LeferiBaseType-RegularA';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiBaseType-RegularA.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'LeferiPoint-WhiteA';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteA.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body{
+            font-family: 'LeferiBaseType-RegularA';
+        }
+        header{
+            position: fixed;
+            width: 100%;
+            z-index: 99999;
+            background-color: #fff;
+        }
+        .header{
+            width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        h1{
+            font-size: 0;
+        }
+        h1 img{
+            width: 200px;
+        }
+        .lnb ul{
+            display: flex;
+            gap: 30px;
+        }
+        .bars{
+            display: none;
+            position: absolute;
+            left: 20px;
+            top: 16px;
+        }
+        .bars>div{
+            line-height: 43px;
+            width: 40px;
+            text-align: center;
+            border-radius: 5px;
+            outline: 1px solid #ababab;
+            offset: -3px;
+            color: #ababab;
+        }
+        .searchBox{
+            display: inline-block;
+            height: 30px;
+            padding: 0;
+            position: relative;
+            }
+        input[type="text"] {
+            height: 30px;
+            font-size: 15px;
+            display: inline-block;
+            font-weight: 100;
+            border: none;
+            outline: none;
+            color: #ff0000;
+            padding: 3px;
+            padding-right: 60px;
+            width: 0px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: none;
+            z-index: 3;
+            transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+            cursor: pointer;
+            }
+
+            input[type="text"]:focus:hover {
+            border-bottom: 1px solid #ff0000;
+            }
+
+            input[type="text"]:focus {
+            width: 200px;
+            z-index: 1;
+            border-bottom: 1px solid #BBB;
+            cursor: text;
+            }
+            input[type="submit"] {
+            height: 67px;
+            width: 63px;
+            display: inline-block;
+            color:red;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRFU1NT9fX1lJSUXl5e1dXVfn5+c3Nz6urqv7+/tLS0iYmJqampn5+fysrK39/faWlp////Vi4ZywAAABF0Uk5T/////////////////////wAlrZliAAABLklEQVR42rSWWRbDIAhFHeOUtN3/ags1zaA4cHrKZ8JFRHwoXkwTvwGP1Qo0bYObAPwiLmbNAHBWFBZlD9j0JxflDViIObNHG/Do8PRHTJk0TezAhv7qloK0JJEBh+F8+U/hopIELOWfiZUCDOZD1RADOQKA75oq4cvVkcT+OdHnqqpQCITWAjnWVgGQUWz12lJuGwGoaWgBKzRVBcCypgUkOAoWgBX/L0CmxN40u6xwcIJ1cOzWYDffp3axsQOyvdkXiH9FKRFwPRHYZUaXMgPLeiW7QhbDRciyLXJaKheCuLbiVoqx1DVRyH26yb0hsuoOFEPsoz+BVE0MRlZNjGZcRQyHYkmMp2hBTIzdkzCTc/pLqOnBrk7/yZdAOq/q5NPBH1f7x7fGP4C3AAMAQrhzX9zhcGsAAAAASUVORK5CYII=) center center no-repeat;
+            background-size: 25px;
+            text-indent: -10000px;
+            border: none;
+            position: absolute;
+            top: -20px;
+            right: 0;
+            z-index: 2;
+            cursor: pointer;
+            opacity: 0.4;
+            cursor: pointer;
+            transition: opacity .4s ease;
+        }
+
+        input[type="submit"]:hover {
+            opacity: 0.8;
+        }
+
+        /* section design */
+        /* section1 slideImg */
+        .bx-wrapper {
+            box-shadow: none;
+            border: none;
+            background: #fff;
+        }
+        .bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+            bottom: 19px;
+        }
+        .bx-wrapper .bx-pager.bx-default-pager a {
+            background: #fff;
+        }
+        .bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active, .bx-wrapper .bx-pager.bx-default-pager a:focus {
+            background: red;
+        }
+        .mainbaner{
+            width: 1200px;
+            margin: auto;
+            position: relative;
+            padding-top: 72px;
+            margin-bottom: 50px;
+        }
+        .slider img{
+            width: 100%;
+        }
+        .comment{
+            font-family: 'LeferiPoint-WhiteA';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 10%;
+            text-align: center;
+            line-height: 2rem;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            text-shadow: #333 1px 0 5px,
+                         #333 1px 0 5px;
+        }
+        .comment button{
+            border-style: none;
+            background-color: transparent;
+            border: #fff 1px solid;
+            padding: 6px 12px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 0.5rem;
+            background-color: rgba(51, 51, 51, 0.384);
+            
+        }
+        .comment button:hover{
+            background-color: #fff;
+            color: #333;
+            transition: .5s;
+        }
+
+        h2{
+            color: red;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        /* section2 NEW BAG */
+        .newbag{
+            width: 1200px;
+            margin: auto;
+            position: relative;
+        }
+        .contents01{
+            position: relative;
+        }
+        .prev{
+            position: absolute;
+            top: 40%;
+            left: 20%;
+            background-image: url(./images/redbutton.svg);
+            width: 30px;
+            height: 35px;
+        }
+        
+        .next{
+            position: absolute;
+            top: 40%;
+            right: 20%;
+            background-image: url(./images/redbutton.svg);
+            width: 30px;
+            height: 35px;
+            transform: rotate(-180deg)
+        }
+        .newText{
+            width: 100%;
+            margin: auto;
+            text-align: center;
+        }
+        .newText span{
+            display: block;
+            padding: 0.1rem 0;
+        }
+        span.title_En{
+            color: brown;
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 3px;
+        }
+        span.denimblue{
+            color: rgb(108, 162, 175);
+        }
+        span.black{
+            color: #333;
+        }
+        span.lavendar{
+            color: rgb(212, 137, 150);
+        }
+		.newbag{
+          max-width: 1200px;
+		  width: 40%;
+          margin-bottom: 40px;
+		}
+		.slick-slide .newText {
+		  opacity: 0;
+		}
+		.slick-slide .newText > * {
+		  transition: all 900ms ease;
+		}
+		.slick-slide .newText {
+		  position: relative;
+		  line-height: 1;
+		}
+		.slick-slide .newText {
+		  position: relative;
+		  opacity: 0;
+		}
+		
+		.slick-slide img {
+		  width: 100%;
+		}
+		.slick-slide {
+		  opacity: 0.2;
+		  transition: all 300ms ease;
+		}
+		.slick-current {
+		  opacity: 1;
+		  transform: scale(1.1);
+		}
+		.slick-current .newText {
+		  opacity: 1;
+		}
+		.slick-current .newText {
+		  left: 0;
+		}
+		.slick-current .newText {
+          padding-top: 3rem;
+		  top: -35px;
+		  opacity: 1;
+		}
+        .contents02{
+            padding: 50px 0;
+            background-color: #f1f1ef;
+        }
+        .contents02,
+        .contents02 h2,
+        .contents03,
+        .contents04{
+            margin-bottom: 50px;
+        }
+        .collection_01>div:nth-child(1){
+            font-family: 'Playfair Display SC', serif;
+            font-size: 70px;
+            font-weight: 700;
+            padding: 80px 0;
+            line-height: 5rem;
+        }
+        .collection_01>div:nth-child(1) span{
+            font-size: 90px;
+            line-height: 65px;
+        }
+        .collection_01 img{
+            padding: 30px 0;
+            width: 680px;
+        }
+        .collection_01,
+        .collection_02,
+        .collection_03{
+            width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .collection_02{
+            gap: 200px;
+        }
+        
+        .collection_02>div:nth-child(1) img{
+            width: 500px ;
+            border-radius: 250px 250px 0 0 ;
+        }
+        .collection_02>div:nth-child(2) img{
+            width: 500px;
+        }
+        .collection_02>div:nth-child(2) p,
+        .collection_03>div:nth-child(1) p{
+            padding-top: 2rem;
+            font-size: 80px;
+            color: #ababab52;
+            font-family: 'Playfair Display SC', serif;
+            font-weight: 400;
+            line-height: 5rem;
+            text-align: right;
+        }
+        .collection_03 .break{
+            display: none;
+        }
+        .collection_03>div:nth-child(1) p{
+            color: #f7e00f79;
+            padding: 8rem 0;
+            text-align: left;
+        }
+        .collection_03>div:nth-child(1) img{
+            width: 500px;
+            border-radius: 80%;
+        }
+        .collection_03>div:nth-child(2) img{
+            width: 500px ;
+            border-radius: 300px 0 0 0 ;
+        }
+        /* instagram box */
+        .contents03{
+            padding-bottom: 50px 0;
+        }
+        .instagramBox{
+            width: 1200px;
+            margin: auto;
+        }
+        .box{
+            background-size: cover;
+            float: left;
+            width: 200px;
+            height: 200px;
+            margin: 5px;
+        }
+        .box1{
+            background-image: url(./images/ins01.jpg);
+        }
+        .box2{
+            background-image: url(./images/ins02.jpg);
+        }
+        .box3{
+            background-image: url(./images/ins03.jpg);
+        }
+        .box4{
+            background-image: url(./images/ins04.jpg);
+        }
+        .box5{
+            background-image: url(./images/ins05.jpg);
+        }
+        .box6{
+            background-image: url(./images/ins06.jpg);
+        }
+        .box7{
+            background-image: url(./images/ins07.jpg);
+        }
+        .box8{
+            background-image: url(./images/ins08.jpg);
+        }
+        .box9{
+            background-image: url(./images/ins09.jpg);
+        }
+        .box10{
+            background-image: url(./images/ins10.jpg);
+        }
+        .caption{
+            width: 200px;
+            height: 200px;
+            background-color: #000;
+            opacity: 0;
+            background-image: url(./images/instagram_hover.svg);
+            background-size: 80%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            transition: 0.5s;
+        }
+        .box:hover .caption{
+            opacity: 0.6;
+        }
+        /* notice */
+        .contents04{
+            width: 1200px;
+            margin: auto;
+        }
+        .noticeFlex{
+            padding: 100px 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 200px;
+        }
+        h3{
+            font-size: 30px;
+            color: red;
+            text-align: right;
+        }
+        table{
+            text-align: center;
+            border-collapse: collapse;
+        }   
+        table tr{
+            height: 28px;           
+        }
+        table td{
+            border-bottom: 1px solid #c5c4c4;
+        }
+        thead tr:nth-child(1){
+            border-top: 2px solid rgb(235, 113, 113);
+        }
+        table tr td:nth-child(1){
+            width: 50px;
+        }
+        table tr td:nth-child(2){
+            width: 300px;
+        }
+        table tr td:nth-child(3){
+            width: 100px;
+        }
+        footer{
+            background-color: #333;
+            color: #fff;
+        }
+        .footer{
+            width: 1200px;
+            margin: auto;
+            padding: 55px 0;
+            text-align: center;
+            font-size: 10px;
+        }
+        .footerTop{
+            line-height: 40px;
+        }
+        .footerBottom .text{
+            margin-bottom: 20px;
+        }
+        .footerBottom span{
+            display: block;
+            padding: .2rem;
+        }
+        .footerBottom .sns{
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .footerBottom img{
+            width: 30px;
+        }
+        @media screen and (max-width:1250px){
+            header{
+                width: 100%;
+            }
+            .header{
+                width: 98%;
+            }
+            .mainbaner{
+                width: 100%;
+            }  
+            .newbag{
+                width: 100%;
+            }
+            .instagramBox{
+                width: 100%;
+            }
+            .noticeFlex{
+                width: 100%;
+            }
+            .footer{
+                width: 100%;
+            }
+            h2{
+                width:100%;
+            }
+        }
+
+        @media screen and (max-width:960px){
+            .header{
+                width: 95%;
+            }
+            .comment{
+                margin-bottom: 8px;
+            }
+            .comment p,
+            .comment button{
+                font-size: 80%;
+            }
+            .lnb{
+                display: none;
+            }
+            .lnb{
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                height: 300px;
+                background-color: rgba(255, 255, 255, 0.74);
+                padding: 20px;
+            }
+            .lnb ul{
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .lnb a{
+                color: #333;
+            }
+            .bars{
+                display: block;
+            }
+            .header{
+                justify-content: center;
+            }
+            .searchBox{
+                position: absolute;
+                right: 0;
+                
+            }
+            .mainbaner{
+                width: 100%;
+            }
+            .newbag{
+                width: 100%;
+            }
+            .newbagImg{
+                width: 80%;
+            }
+            h2{
+                width: 100%;
+            }
+            .newText{
+                width: 100%;
+            }
+            .collections{
+                width: 90%;
+                margin: auto;
+            }
+            .collection_01{
+                width: 90%;
+                flex-wrap: wrap;
+            }
+            .collection_01>div:nth-child(1){
+                font-size: 60px;
+                padding: 0;
+                margin: auto;
+                text-align:center;
+            }
+            .collection_01>div:nth-child(1) span{
+                font-size: 80px;
+            }
+            
+            .collection_01 img{
+                text-align: center;
+                width: 90%;
+                margin: 0 7%;
+            }
+            .collection_02,
+            .collection_03{
+                flex-wrap: wrap;
+                gap: 100px;
+                width: 100%;
+                padding: 0;
+            }
+            .collection_02>div:nth-child(1){
+                width: 100%;
+                text-align: center;
+            }
+            .collection_02>div:nth-child(2),
+            .collection_03>div:nth-child(1){
+                margin: auto;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 110px;
+            }
+            .collection_03>div:nth-child(1){
+                padding-top: 5.5rem;
+                gap: 0;
+
+            }
+            .collection_03>div:nth-child(1) img{
+                padding: 0;
+            }
+            .collection_03>div:nth-child(1) p {
+                padding: 0;
+            }
+            .collection_03 .break{
+                display: inline;
+            }
+            .collection_03>div:nth-child(2){
+                width: 100%;
+                text-align: center;
+                padding: 0;
+            }
+            .collection_03>div:nth-child(2) img{
+                border-radius: 0 0 300px 300px;
+            }
+            .instagramBox{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .instagramBox a:nth-child(9),
+            .instagramBox a:nth-child(10){
+                display: none;
+            }
+            .contents04{
+                width: 100%;
+            }
+            .noticeFlex{
+                width: 100%;
+                justify-content: center;
+                display: block;
+                padding: 0;
+                margin-bottom: 50px;
+            }
+            .noticeFlex h3{
+                font-size: 18px;
+                width: 100%;
+                margin-bottom: 50px;
+                text-align: center;
+            }
+            .notice table{
+                margin: auto;
+                width: 90%;
+            }
+            table tr{
+                height: 40px
+            }
+            h3 br{
+                display: none;
+            }
+            .footer{
+                width: 100%;
+            }
+        }
+        @media screen and (max-width:600px){
+            .newbag{
+                width: 80%;
+            }
+            .prev
+            {
+                left: 15%;
+            }
+            .next{
+                left: 80%;
+            }
+            .collection_03>div:nth-child(1) {
+                padding-top: 50px;
+            }
+            .collection_02, .collection_03 {
+                gap: 50px;
+            }
+            .collection_02>div:nth-child(2),
+            .collection_03>div:nth-child(1){
+                margin: auto;
+                display: block;
+            }
+            .collection_03>div:nth-child(1) p {
+                padding-bottom: 50px;
+            }
+            .footer span{
+                display: none;
+            }
+        }
+        @media screen and (max-width:480px){
+            .collections img{
+                width: 300px;
+                display: block;
+            }
+        }
+
+        /* animated */
+        .animate__animated{
+            animation-duration: 2s;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h1>stand oil <img src="./images/so_logo.png" alt=""></h1>
+            <div class="bars">
+                <div><i class="fa-solid fa-bars"></i></div>
+            </div>
+            <div class="lnb">
+                <ul>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">SHOP</a></li>
+                    <li><a href="#">COLLECTION</a></li>
+                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="#">MY PAGE</a></li>
+                    <li><a href="#">CART</a></li>
+                </ul>
+            </div>
+            <div class="searchBox">
+                <form action="" autocomplete="on">
+                <input id="search" name="search" type="text" placeholder="search for bag"><input id="Search_submit" value="Rechercher" type="submit">
+                </form>
+              </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- section start -->
+    <section>
+        <!-- slide Img -->
+        <div class="mainbaner">
+            <ul class="slider">
+                <li><a href="#"><img src="./images/so_main01.jpg" alt=""></a>
+                    <div class="comment">
+                        <p>Oblong bag Tiny 오블롱 티니 / 데님블루</p>
+                        <button>구매하기</button>
+                    </div>   
+                </li>
+                <li><a href="#"><img src="./images/so_main02.jpg" alt=""></a>
+                    <div class="comment">
+                        <p>언제든지, 어디서든<br>
+                        스탠드 오일 베이직 컬렉션</p>
+                        <button>자세히 보기</button>
+                    </div>   
+                </li>
+                <li><a href="#"><img src="./images/so_main03.jpg" alt=""></a>
+                    <div class="comment">
+                        <p>2022 첫 할인!<br>시즌오프 할인 혜택을 놓치지 마세요</p>
+                        <button>바로가기</button>
+                    </div>   
+                </li>
+            </ul> 
+        </div>
+
+        <!-- contents01 NEW BAG -->
+        <div class="contents01">
+            <h2>NEW BAG</h2>
+            <div class="newbag">
+                <div>
+                <img src="./images/newbag_01brown.png">
+                <div class="newText">
+                  <p>
+                      <span class="title_En">Oblong bag Tiny</span>
+                      <span class="title_Ko">오블롱백 티니 / 브라운</span>
+                      <span class="price">₩91,000</span>
+                  </p>
+              </div>
+                </div>
+              <div>
+                <img src="./images/newbag_02mint.png">
+                <div class="newText">
+                  <p>
+                      <span class="title_En denimblue">Oblong bag Tiny</span>
+                      <span class="title_Ko">오블롱백 티니 / 데님블루</span>
+                      <span class="price">₩91,000</span>
+                  </p>
+              </div>
+              </div>
+            
+              <div>
+                <img src="./images/newbag_03black.png">
+                <div class="newText">
+                  <p>
+                      <span class="title_En black">Oblong bag Tiny</span>
+                      <span class="title_Ko">오블롱백 티니 / 블랙</span>
+                      <span class="price">₩91,000</span>
+                  </p>
+              </div>
+              </div>
+            
+              <div>
+                <img src="./images/newbag_04pink.png">
+                <div class="newText">
+                  <p>
+                      <span class="title_En lavendar">Oblong bag Tiny</span>
+                      <span class="title_Ko">오블롱백 티니 / 라벤더</span>
+                      <span class="price">₩91,000</span>
+                  </p>
+              </div>
+              </div>            
+            </div>
+            <div class="arrowSlider">
+                <span class="prev" id="aro1_prev"></span>
+                <span class="next" id="aro1_next"></span>
+            </div>
+        </div>
+        <!-- contents02 COLLECTION -->
+        <div class="contents02">
+            <h2>COLLECTION</h2>
+            <div class="collections">
+                <div class="collection_01">
+                    <div class="animate__animated" data-effect="animate__fadeInLeft">
+                        SPRING
+                        <br>COLLECTION 
+                        <br><span>2022</span> 
+                    </div>
+                    <div class="animate__animated" data-effect="animate__fadeIn"><img src="./images/2022springbag01.png" alt=""></div>
+                </div>
+                <div class="collection_02">
+                    <div class="animate__animated" data-effect="animate__fadeIn"><img src="./images/co01.jpg" alt=""></div>     
+                    <div class="animate__animated" data-effect="animate__fadeIn">
+                        <div>
+                            <img src="./images/co04-01.jpg" alt="">
+                        </div>
+                        <div>
+                            <p>FIND<br>YOUR<br>STYLE</p>
+                        </div>
+                    </div>          
+                </div>
+                <div class="collection_03">
+                    <div class="animate__animated" data-effect="animate__fadeIn">
+                        <div>
+                            <p>NEW<br>SPRING<br>COLLEC<span class="break">-</span><br class="break">TION</p>
+                        </div>
+                        <div>
+                            <img src="./images/co03-01.jpg" alt="">
+                        </div> 
+                    </div>
+                    <div class="animate__animated" data-effect="animate__fadeIn"><img src="./images/co02.jpg" alt=""></div>         
+                </div>
+            </div>
+        </div>
+        <!-- contents03 WITH INSTAGRAM -->
+        <div class="contents03">
+            <h2>WITH INSTAGRAM</h2>
+            <div class="instagramBox">
+                <a href="https://www.instagram.com/p/CbEalCgJOqB/?utm_source=ig_web_copy_link">
+                    <div class="box box1">
+                        <div class="caption"></div>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/p/Ca_9JVCJOPC/?utm_source=ig_web_copy_link">
+                    <div class="box box2">
+                        <div class="caption"></div>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/p/Ca8s0wYJ6IV/?utm_source=ig_web_copy_link">
+                    <div class="box box3">
+                        <div class="caption"></div>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/tv/Ca3fbVrptoj/?utm_source=ig_web_copy_link">
+                    <div class="box box4">
+                        <div class="caption"></div>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/tv/Ca1AM29JFB4/?utm_source=ig_web_copy_link">
+                    <div class="box box5">
+                        <div class="caption"></div>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/tv/Cav5i1mJoSS/?utm_source=ig_web_copy_link">
+                    <div class="box box6">
+                        <div class="caption"></div>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/tv/CaqlGXdpcQU/?utm_source=ig_web_copy_link">
+                    <div class="box box7">
+                        <div class="caption"></div>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/p/CamK8WaJC5R/?utm_source=ig_web_copy_link">
+                    <div class="box box8">
+                        <div class="caption"></div>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/tv/CajBmDepLx6/?utm_source=ig_web_copy_link">
+                    <div class="box box9">
+                        <div class="caption"></div>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/tv/CaZQbkDph-T/?utm_source=ig_web_copy_link">
+                    <div class="box box10">
+                        <div class="caption"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="contents04">
+            <div class="noticeFlex">
+                <h3>SATND OIL<br>
+                    NOTICE</h3>
+                <div class="notice">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>No</td>
+                                <td>Subject</td>
+                                <td>Date</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>공지</td>
+                                <td>[일부 지역 배송 지연 및 불가 안내]</td>
+                                <td>2022-03-15</td>
+                            </tr>
+                            <tr>
+                                <td>공지</td>
+                                <td>[폴드파우치X라엘] 기부 이벤트 - 전달 완료</td>
+                                <td>2021-12-13</td>
+                            </tr>
+                            <tr>
+                                <td>공지</td>
+                                <td>교환 및 환불 시 주의 사항</td>
+                                <td>2021-11-05</td>
+                            </tr>
+                            <tr>
+                                <td>공지</td>
+                                <td>[FAQ 자주 찾는 질문]</td>
+                                <td>2021-03-23</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer">
+            <div class="footerTop">
+                <h1><img src="./images/footer_logo.png" alt=""></h1>
+                <div>Terms & Privacy | Guide</div>                    
+            </div>
+            <div class="footerBottom">
+                <div class="text">
+                    <span>Tel : 02-2174-8310 | Mon-Fri. AM10:00-PM16:00 (점심시간 12:30-14:00) | Address 서울 성동구 뚝섬로1길 63, 5층 501호</span>
+                    <span>Company 주식회사코자 | Owner 김정헌 | E-mail standoilofficial@gmail.com | Business number 5148194739</span>
+                    <span>Mail-order license 2022-서울성동-02420 [사업자정보확인]</span>
+                </div>
+                <div class="sns">
+                    <div><img src="./images/footer_icon_instagram.png" alt=""></div>
+                    <div><img src="./images/footer_icon_facebook.png" alt=""></div>
+                    <div><img src="./images/footer_icon_twiter.png" alt=""></div>
+                </div>                    
+            </div>
+        </div>
+    </footer>
+    <script src="./script/jquery-3.6.0.min.js"></script>
+    <script src="./script/jquery.bxslider.min.js"></script>
+    <script src="./script/slick.min.js"></script>
+    
+    <script>
+        $(window).on('resize', function(){
+            var windowWidth = $(this).width();
+            if(windowWidth <= 1024){
+                $('.lnb').slideUp(1);
+            }else{
+                $('.lnb').slideDown();
+            }
+        })
+        $('.bars').on('click', function(){
+            $('.lnb').slideToggle();
+        })
+        $(document).ready(function(){
+          $('.slider').bxSlider({
+            auto: true
+          });
+        });
+        /*slick slider*/
+        function createSlick(){  
+
+                $(".newbag").not('.slick-initialized').slick({
+                    centerMode: true,
+                    autoplay: true,	
+                    slidesToShow: 3,
+                    arrows: true,
+                    prevArrow: $('#aro1_prev'),
+                    nextArrow: $('#aro1_next'),
+                    responsive: [
+                        {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: false,
+                            arrows: false
+                        }
+                        }]
+                });	
+        }
+        createSlick();
+        //Will not throw error, even if called multiple times.
+        $(window).on( 'resize', createSlick );
+
+            /* scroll animated */
+            $(window).scroll(function(){
+                var sct = $(this).scrollTop();
+
+                $('div[class^="collection_"]>div').each(function(){
+                    var collectionsAni = $(this).offset().top - 600;
+                    var collectionsEffect = $(this).attr('data-effect');
+                    if(sct >= collectionsAni){
+                        $(this).addClass(collectionsEffect)
+                    }
+                })
+            })
+    </script>
+</body>
+</html>
